@@ -42,7 +42,7 @@ end
 
 puts "Creating bookmarks..."
 
-10.times do
+50.times do
   bookmark = Bookmark.create!(
     comment: "recommended by #{Faker::Movies::LordOfTheRings.character}",
     movie_id: rand(Movie.first.id..Movie.last.id),
