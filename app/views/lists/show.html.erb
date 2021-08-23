@@ -13,7 +13,8 @@
   <div class="row my-2 mx-1">
     <%@list.bookmarks.each do |bookmark| %>
     <div class="card-product">
-      <img src="<%= bookmark.movie.poster_url %>"/>
+
+      <%= image_tag 'bookmark.movie.poster_url' %>
       <div class="card-product-infos">
         <h2><%= bookmark.movie.title %></h2>
         <p><%=bookmark.comment %></p>
