@@ -1,0 +1,18 @@
+.header {
+  background-size: cover;
+  background-position: center;
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.title-container {
+  height: 200px;
+  display: flex;
+}
+
+.title {
+  align-items: flex-end;
+}

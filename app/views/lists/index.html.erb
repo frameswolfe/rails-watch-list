@@ -1,6 +1,13 @@
-<h1>My Movie Lists</h1>
-<ul>
+<div class="header mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.pinimg.com/736x/32/98/97/329897c58817da2140e737858ab5f3f7--princess-mononoke-environment.jpg)">
+  <div class="title-container">
+    <h1 class="title">Wolfe's Watch List</h1>
+  </div>
+</div>
+
+<div class="cards mx-5">
   <% @lists.each do |list| %>
-  <li><%= link_to list.name, list %> </li>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <%= link_to list.name, list %>
+    </div>
   <% end %>
-</ul>
+</div>

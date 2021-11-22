@@ -33,22 +33,29 @@ puts "Creating movies..."
   end
 end
 
-puts "Creating lists..."
+puts 'Creating lists...'
 
-10.times do |i|
-  list = List.create!(name: "#{i+1}. #{Faker::Movies::LordOfTheRings.location}")
+genres = %w[Action Classic Comedy Drama Fantasy Romance]
+
+genres.each do |genre|
+  list = List.create!(name: genre.upcase!)
   puts "Creating #{list['name']}..."
 end
 
-puts "Creating bookmarks..."
+# 10.times do |i|
+#   list = List.create!(name: "#{i+1}. #{Faker::Movies::LordOfTheRings.location}")
+#   puts "Creating #{list['name']}..."
+# end
 
-50.times do
-  bookmark = Bookmark.create!(
-    comment: "recommended by #{Faker::Movies::LordOfTheRings.character}",
-    movie_id: rand(Movie.first.id..Movie.last.id),
-    list_id: rand(List.first.id..List.last.id)
-  )
-  puts "Creating bookmark #{bookmark['comment']}..."
-end
+# puts "Creating bookmarks..."
+
+# 50.times do
+#   bookmark = Bookmark.create!(
+#     comment: "recommended by #{Faker::Movies::LordOfTheRings.character}",
+#     movie_id: rand(Movie.first.id..Movie.last.id),
+#     list_id: rand(List.first.id..List.last.id)
+#   )
+#   puts "Creating bookmark #{bookmark['comment']}..."
+# end
 
 puts "Finished seeding!"
