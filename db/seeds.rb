@@ -23,13 +23,15 @@ puts "Creating movies..."
   base_poster_url = 'https:image.tmdb.org/t/p/original'
   movies = JSON.parse(open("#{movies_url}?page=#{i + 1}").read)['results']
   movies.each do |movie|
-    puts "Creating #{movie['title']}..."
-    Movie.create(
-      title: movie['title'],
-      overview: movie['overview'],
-      poster_url: "#{base_poster_url}#{movie['poster_path']}",
-      rating: movie['vote_average']
-    )
+    if movie['original_language'] == 'en'
+      puts "Creating #{movie['title']}..."
+      Movie.create(
+        title: movie['title'],
+        overview: movie['overview'],
+        poster_url: "#{base_poster_url}#{movie['poster_path']}",
+        rating: movie['vote_average']
+      )
+    end
   end
 end
 

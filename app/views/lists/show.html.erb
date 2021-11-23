@@ -1,28 +1,30 @@
 <div class='container'>
-<div class="position-relative">
-  <div class="card-category card-large">
-    <h1><%= @list.name %></h1>
-  </div>
-    <span class="movie-tag"><%= pluralize(@list.movies.size, 'movie') %></span>
-    <br>
-    <%= link_to 'Create a bookmark', new_list_bookmark_path(@list) %>
-    <br>
-    <%= link_to 'Back', lists_path %>
-</div>
-<div class="container mb-5">
-  <div class="row my-2 mx-1">
-    <%@list.bookmarks.each do |bookmark| %>
-    <div class="card-product">
-
-      <%= image_tag 'bookmark.movie.poster_url' %>
-      <div class="card-product-infos">
-        <h2><%= bookmark.movie.title %></h2>
-        <p><%=bookmark.comment %></p>
-        <%= link_to "Delete", bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure?' } %></li>
-      </div>
+  <div class="position-relative">
+    <div class="card-category card-large">
+      <h1><%= @list.name %></h1>
     </div>
-    <%end %>
+      <span class="movie-tag"><%= pluralize(@list.movies.size, 'movie') %></span>
+      <br>
+      <%= link_to 'Create a bookmark', new_list_bookmark_path(@list) %>
+      <br>
+      <%= link_to 'Back', root_path %>
   </div>
-</div>
+
+  <div class="mb-5">
+    <div class="row my-2 mx-1">
+      <%@list.bookmarks.each do |bookmark| %>
+        <%= link_to bookmark.movie do %>
+          <div class="card-product">
+            <img src="<%= bookmark.movie.poster_url %>" alt="<%= bookmark.movie.title %>">
+            <div class="card-product-infos">
+              <h2><%= bookmark.movie.title %></h2>
+              <p><%=bookmark.comment %></p>
+              <%= link_to "Delete", bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 
 </div>
