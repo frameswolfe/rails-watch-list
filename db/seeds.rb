@@ -8,12 +8,12 @@
 require 'open-uri'
 require 'json'
 
-# if Rails.env.development?
+if Rails.env.development?
   puts "Destroying movie lists..."
   List.destroy_all
   puts "Destroying movies..."
   Movie.destroy_all
-# end
+end
 
 puts "Creating movies..."
 
