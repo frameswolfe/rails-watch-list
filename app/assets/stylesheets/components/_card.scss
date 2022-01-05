@@ -1,7 +1,7 @@
 .card-category {
-  background-size: cover;
+  background-size: contain;
   background-position: center;
-  height: 180px;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,12 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 24px;
+}
+
+.cards a {
+  color: #FFFFFF;
+  text-decoration: none;
 }
 
 // Smallest device
@@ -84,4 +89,23 @@
 }
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+#genre1 {
+  background: url(asset_path("action.jpeg"))
+}
+#genre2 {
+  background: url(asset_path("classic.jpeg"))
+}
+#genre3 {
+  background: url(asset_path("comedy.jpeg"))
+}
+#genre4 {
+  background: url(asset_path("drama.jpeg"))
+}
+#genre5 {
+  background: url(asset_path("fantasy.jpeg"))
+}
+#genre6 {
+  background: url(asset_path("romance.jpeg"))
 }

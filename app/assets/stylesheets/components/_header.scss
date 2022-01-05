@@ -1,18 +1,21 @@
 .header {
   background-size: cover;
-  background-position: center;
-  height: auto;
-  width: 100%;
+  background-position: top;
+  background-repeat: no-repeat;
+  height: 220px;
+  width: auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-end;
+  background: url(asset_path("banner.jpg"))
 }
 
 .title-container {
-  height: 200px;
-  display: flex;
+  // height: 200px;
+  // display: flex;
 }
 
-.title {
-  align-items: flex-end;
+.title, .subtitle {
+  // align-items: flex-end;
+  color: white;
 }

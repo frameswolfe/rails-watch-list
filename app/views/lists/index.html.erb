@@ -1,13 +1,20 @@
-<div class="header mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.pinimg.com/736x/32/98/97/329897c58817da2140e737858ab5f3f7--princess-mononoke-environment.jpg)">
+<div class="header mb-4 px-5">
   <div class="title-container">
-    <h1 class="title">Wolfe's Watch List</h1>
+    <h3 class="title">Genres</h3>
+  </div>
+  <div class="subtitle-container">
+    <%= link_to movies_url do %>
+      <h4 class="subtitle">Movies</h3>
+    <% end %>
   </div>
 </div>
 
 <div class="cards mx-5">
-  <% @lists.each do |list| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-      <%= link_to list.name, list %>
+  <% @lists.each_with_index do |list, index| %>
+  <%= link_to list do %>
+    <div class="card-category" id="genre<%= index + 1 %>">
+      <%= list.name %>
     </div>
+  <% end %>
   <% end %>
 </div>
