@@ -2,7 +2,7 @@
   "name": "rails_watch_list",
   "private": true,
   "engines": {
-    "node": "14.15.5"
+    "node": "16.13.1"
   },
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
