@@ -31,5 +31,8 @@ module RailsWatchList
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # potential bugfix for 'precomiling assets failed
+    config.assets.initialize_on_precompile = false
   end
 end
